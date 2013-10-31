@@ -3,7 +3,6 @@
 <section id="accessibility">
 
 	<div class="intro has-icon">
-		<img class="icon" src="img/layout/icon-curly.png" alt="{}" />
 		<h1>Accessibility</h1>	
 	</div>
 
@@ -135,42 +134,12 @@
 	<pre>ExpiresDefault "access plus 1 year"</pre>
 	
 	<p>Expires http header should be set to a value between one month from present to a year (far future) from present. Caching only applies to that exact URL, so a change in the filename of any asset will start a fresh copy. Many developers use a build process to add a version number or timestamp to their assets. Each subsequent build will start a brand new cached version, allowing you to use far future cache dates without worry. <a href="http://code.google.com/speed/page-speed/docs/caching.html#LeverageBrowserCaching ">Google has a lot more detail on browser caching</a>.</p>
-	
-	
-	<h3>Shard resources across domains</h3>
-	
-	<p>Static content should certainly be served from a domain different than the one that serves HTML. This is optimal so that there are <a href="http://developer.yahoo.com/performance/rules.html#cookie_free">no extra cookies headers on all static content requests</a>. It's also much easier to write caching rules for the entire domain. (Also any subdomains of the current domain will inherit domain cookies, so it's worth using a completely new domain).</p>
-	
-	<p>However with enough assets (especially images) the number of requests grows enough to slow down the load of the page. Many browsers have a low constraint of how many assets they will download simultaneously per domain. (In IE6 and 7, it's only two). In this case, we can serve the assets from multiple subdomains such as:</p>
-	
-	<ul>
-		<li>static1.otherdomain.com</li>
-		<li>static2.otherdomain.com</li>
-		<li>static3.otherdomain.com</li>
-	</ul>
 
-	<p><a href="http://code.google.com/speed/page-speed/docs/rtt.html#ParallelizeDownloads">More information on domain sharding on Google Speed</a></p>
-	
 	
 	<h3>Avoid IFRAMEs</h3><!-- like the plague -->
 	
 	<p>Iframes are the most costly element to add to a given page. They block the page from firing the onload event until they are complete. Sometimes they are useful to let another agency handle tracking scripts. For example the Doubleclick floodlight tag is an iframe, and the admin can add tracking pixels into it from their dashboard. In any case where an iframe is added, it should be appended to the DOM dynamically after window onload has fired. <a href="http://developer.yahoo.com/performance/rules.html#iframes">More detail at Yahoo's Performance site.</a></p>
 	
-	
-	<h3>3rd Party Integration</h3>
-	
-	<h4>Omniture</h4>
-	
-	<p>We recommend to add the Omniture JavaScript code to the DOM using JavaScript after the page has loaded (either a DOM ready event or window's load event). Using this technique, there is no external domain script dependency, which can slow down (and potentially hang) a page load.</p>
-	
-	
-	<h4>Flash</h4>
-	
-	<p>Backup HTML content should be in place of the flash in all cases to maximize SEO value. For XML-driven flash, the backup HTML content should be leveraging the exact same XML file, to ensure data consistency.</p>
-	
-	<p>All replacements should be done using SWFObject but without inline script tags. SWFObject initialization should fire after the DOM Ready event. Minimum player version should be set to minimum v9, to ensure AS3 compatibility.</p>
-	
-
 
 		<h2 id="browserperformance">Cross-Browser Performance Strategy</h2>
 		<p>There are two major truths when it comes to in-browser experience:</p>
@@ -198,50 +167,11 @@
 	<p>For load-time based goals, it's important to define the benchmark system. Something like <a href="http://www.webpagetest.org/">PageTest</a> is a good option. Additionally, goals may be defined for multiple pages, for example: the two most popular landing pages (e.g. homepage and support).</p>
 	
 	<p>If the client has more aggressive goals than are reasonable with the intended design, expectations need to be set across the board, priming the team that performance goals are going to be paramount.</p>
-
-
-	<h3>Communicating the performance impact during design phase</h3>
-
-	<strong>Internally</strong>
-
-	<p>During IA, IxD, and visual design, it is the front end engineer's role to communicate the performance impact of interactive features or certain visual techniques on the target browsers. Give the designers constraints: "If we're using Cufon, we cannot have more than 10 elements of custom font per page."</p>
-
-	<strong>Externally</strong>
-
-	<p>Expectations need to be set that <strong>all browsers will not have the same experience</strong>. They won't perform as well as each other, nor may it make sense to have feature parity. It may be sensible to drop a few features from the IE7 experience. Features that could be considered to be dropped are: <em>shadows, transitions, rounded corners, opacity, gradients.</em></p>
-	
-	<strong>When communicating the impact of something:</strong>
-
-	<ul>
-		<li>Clarify the impact with as much detail as possible: "it will hurt page load" vs "it will add 2 seconds to page load in IE"</li>
-		<li>Provide a quick POC (proof of concept) if it's reasonable: "This similar-looking page without siFR loads in 2 seconds, with siFR it loads in 8 and has a delay to show during scrolling"</li>
-	</ul>
 	
 
 	<h3>Develop according to best practices</h3>
 
 	<p>Choose libraries and plugins that are performance optimized. Make wise architecture decisions based on performance goals. Also minimize DOM manipulation when possible, and write styles to <a href="http://paulirish.com/2009/avoiding-the-fouc-v3/">avoid visual changes</a> to the page as it loads and initializes.</p>
-
-
-	<h3>Measure performance during QA</h3>
-
-	<p>QA teams should also prioritize performance related tickets alongside visual, functional, and usability issues. Developers and QA should determine how that priority will be assigned. During QA, the success metrics should be tested regularly.</p>
-
-	<strong>Tools to test with</strong>
-
-	<ul>
-		<li><a href="http://developer.yahoo.com/yslow/">YSlow</a>, <a href="http://code.google.com/speed/page-speed/">Page Speed</a>, <a href="http://stevesouders.com/hammerhead/">Hammerhead</a>, <a href="http://msfast.myspace.com/">MSFast</a>, <a href="http://www.webpagetest.org/">PageTest</a></li>
-	</ul>
-
-	<strong>When performance goals aren't met, there are three options:</strong>
-
-	<ol>
-		<li><em>Redevelop the code</em> - profile, discover bottlenecks, refactor code, optimize to target faster execution in the browser</li>
-		<li><em>Drop the feature</em> - turn it off for slower browsers only</li>
-		<li><em>Redesign approach of the UI</em> - perhaps the design could use a tweak which would bypass the issue entirely</li>
-	</ol>
-
-	<p>With this approach, we think all parties have a better chance of having aligned expectations heading in as well as a more sensible workflow in dealing with performance challenges.</p>
 
 
 </section>

@@ -12,33 +12,15 @@ meta:
 
 <h2>Overview</h2>
 
-<p>This document contains guidelines for web applications built by the Creative Technology (front end engineering) practice of Roundarch Isobar. It is to be readily available to anyone who wishes to check the iterative progress of our best practices.</p>
-
-<p>This document's primary motivation is two- fold: <tt>1)</tt> code consistency and <tt>2)</tt> best practices. By maintaining consistency in coding styles and conventions, we can ease the burden of legacy code maintenance, and mitigate risk of breakage in the future. By adhering to best practices, we ensure optimized page loading, performance and maintainable code.</p>
-
+<p>This page contains standards and best practices used by the team at Lighburn Designs.</p>
 
 <section id="general">
 
 	<div class="intro has-icon">
-		<img class="icon" src="img/layout/icon-curly.png" alt="{}" />
 		<h1>General Guidelines</h1>
 	</div>
-	
-	<h2>Pillars of Front-end Development</h2>
-	
-	<ol>
-		<li>Separation of presentation, content, and behavior.</li>
-		<li><a href="http://www.bbc.co.uk/guidelines/futuremedia/technical/semantic_markup.shtml">Markup should be well-formed, semantically correct</a> and <a href="#_appendix_a_validators">generally valid</a>.</li>
-		<li><a href="http://icant.co.uk/articles/pragmatic-progressive-enhancement/">Javascript should progressively enhance the experience</a>.</li>
-	</ol>
-	
-	
+
 	<h2>General Practices</h2>
-	
-	<h3>Indentation</h3>
-	
-	<p>For all code languages, we require indentation to be done via soft tabs (using the space character). Hitting <em>Tab</em> in your text editor shall be equivalent to <b>four spaces</b>.</p>
-	
 	
 	<h3>Readability vs Compression</h3>
 	
@@ -182,7 +164,6 @@ meta:
 <section id="css">
 
 	<div class="intro has-icon">
-		<img class="icon" src="img/layout/icon-curly.png" alt="{}" />
 		<h1>CSS</h1>
 
 		<p>The second component of a web page is the presentation information contained in the Cascading Style Sheet (<abbr title="Cascading Style Sheets">CSS</abbr>.) Web browsers successful implementation of CSS has given a whole generation of web authors site-wide control over the look and feel of their web sites.</p>
@@ -598,44 +579,6 @@ meta:
 
 	<hr />
 
-	<h3>Cufon</h3>
-
-	<p>If you choose to use Cufon, it is highly recommended you use the <a href="http://cufon.shoqolate.com/js/cufon-yui.js">Cufon compressed version</a>. You will need to convert your font using the <a href="http://cufon.shoqolate.com/generate/">generator</a>.</p>
-
-	<textarea class="brush:javascript">
-		<script src="cufon-yui.js" type="text/javascript"></script>
-		<script src="YourFont.font.js" type="text/javascript"></script>
-		<script type="text/javascript">
-			Cufon.replace('h1');		// Works without a selector engine
-			Cufon.replace('#sub1'); 	// Requires a selector engine for IE 6-7
-		</script>
-	</textarea>
-
-	<p>We recommend using Cufon sparingly since it can cause a lot of overhead if applied to a large amount of text. For more info visit the <a href="https://github.com/sorccu/cufon/wiki/">Cufon Wiki</a>.</p>
-
-
-	<strong>Pros</strong>
-
-	<ul>
-		<li>Wide browser support</li>
-		<li>Renders well in supported browsers</li>
-		<li>Customizable</li>
-		<li>Easy to implement</li>
-	</ul>
-
-
-	<strong>Cons</strong>
-
-	<ul>
-		<li>Requires use of JS to work</li>
-		<li>Text can't be selected that uses it</li>
-		<li>Not all characters can be used</li>
-		<li>Customization can be a pain</li>
-		<li>Not always easy to apply to multiple elements, especially when adding effects like hovers</li>
-	</ul>
-
-	<hr />
-
 	<h3>Typekit</h3>
 
 	<p>Using <a href="https://typekit.com">Typekit</a> has its advantages and shouldn't be completely disregarded when choosing which method to use for adding custom fonts to a web site. It has strong platform integration and is a scalable and popular service. It can be used with Google Webfonts and is easily added to WordPress, Posterous, Typepad, and other similar CMS powered sites.</p>
@@ -660,35 +603,6 @@ meta:
 		<li>Limited font library access without paying</li>
 		<li>Free and cheapest plans only allow use on 1-2 web sites and 2-5 fonts per site</li>
 		<li>You have to pay to use it on more than 1 site</li>
-	</ul>
-
-	<hr />
-
-	<h3>Scalable Inman Flash Replacement (sIFR)</h3>
-
-	<p>We do not recommend that you use this method but because of how widely used it is we felt it was necessary to include so you could make a properly informed decision when choosing which method to go with for customized webfonts.</p>
-
-	<p>Despite its wide popularity among web designers, and its decent support in most browsers, the drawbacks to its use outweigh its convenience. The biggest and most obvious reason to not use sIFR is the fact that it uses Flash. Plus, in order for the Flash to even work, it requires JavaScript and the scripts must be loaded before the text you use it on is visible on the page. Not to mention that it increases page load time, and can cause a slow site to be even slower.</p>
-
-	<p class="normalize">We'll let you do the math here.</p>
-
-	<strong>Pros</strong>
-
-	<ul>
-		<li>Text can be selected</li>
-		<li>Support on most browsers</li>
-		<li>Renders okay on supported browsers</li>
-	</ul>
-
-
-	<strong>Cons</strong>
-
-	<ul>
-		<li>It uses Flash</li>
-		<li>Requires JavaScript for the Flash to work</li>
-		<li>It's Flash!</li>
-		<li>Text doesn't appear until the scripts load</li>
-		<li>...and it's Flash...</li>
 	</ul>
 
 	<hr />
@@ -730,7 +644,6 @@ meta:
 <section id="js">
 
 	<div class="intro has-icon">
-		<img class="icon" src="img/layout/icon-curly.png" alt="{}" />
 		
 		<h1>JavaScript</h1>
 	
@@ -739,10 +652,6 @@ meta:
 		<p>JavaScript has seen an explosion in popularity in recent years as powerful new browser implementations have finally empowered the creation of full on browser-based web applications. Additionally, careful use of JavaScript allows for full manipulation and control over the other two components of web page authoring, <a href="#markup">HTML Markup</a> and <a href="#css">CSS</a>. Today the structure of pages and the visual styles of pages can be manipulated real time without full web page refreshes.</p>
 	</div>
 
-	<h2>JavaScript Libraries</h2>
-
-		<p class="normalize">We primarily develop new applications in <a href="http://api.jquery.com/">jQuery</a>, though we have expertise in plain JavaScript as well as all major modern javascript libraries.</p>
-	
 	<h2>General Coding Principles</h2>
 	
 	<ul>
@@ -757,7 +666,6 @@ meta:
 		</li>
 		<li>Name variables and functions logically: For example: <code>popUpWindowForAd</code> rather than <code>myWindow</code>.</li>
         <li>Don't manually minify. With the exception of the traditional <code>i</code>, etc. for <code>for</code> loops, variables should be long enough to be meaningful.</li>
-		<li>Documentation should follow <a href="http://www.naturaldocs.org/documenting.html">NaturalDocs</a> structure.</li>
 		<li>Constants or configuration variables (like animation durations, etc.) should be at the top of the file.</li>
 
 		<li>Strive to create functions which can be generalized, take parameters, and return values. This allows for substantial code reuse and, when combined with includes or external scripts, can reduce the overhead when scripts need to change. For example, instead of hard coding a pop-window with window size, options, and url, consider creating a function which takes size, url, and options as variables.
@@ -803,139 +711,6 @@ meta:
 			// Do something.
 		}
 	</textarea>
-
-
-	<h3>plugins.js and script.js</h3>
-	
-	<p>Starting with H5BP we're presented with two files, plugins.js and script.js. This section outlines basic usage of these two files.</p>
-	
-	<h4>plugins.js</h4>
-	
-	<p>Plugins.js is meant to hold all of a sites plugin code. Instead of linking to many different files, we can improve performance by including plugin code directly in this one file. There can and should be exceptions to this usage. An extremely large plugin only used on one rarely visited page, for example, might be better off in a separate download, only accessed on the target page. Most of the time, however, it's safe to just paste in minified versions of all your plugins here for easy access. </p>
-	
-	<p>Here's what an example file might looks like, including a small table of contents. This can serve as a handy guide for what plugins are in use, including URLs for documentation, rationale for use and the like.</p>
-	
-	<textarea class="brush:js">
-	/* PLUGIN DIRECTORY
-	What you can find in this file [listed in order they appear]
-	
-		   1.) Animate Background Position - http://plugins.jquery.com/project/backgroundPosition-Effect
-		   2.) jQuery Easing Plugin - http://gsgd.co.uk/sandbox/jquery/easing/
-		   3.) jQuery Ajax Form plugin - http://jquery.malsup.com/form/#download            
-		   4.) jQuery validation plugin (form validation) - http://docs.jquery.com/Plugins/Validation
-			   -password strength
-		   5.) Styled Selects (lightweight) - http://code.google.com/p/lnet/wiki/jQueryStyledSelectOverview
-	*/
-	
-	/**
-	* 1.) Animate Background Position - http://plugins.jquery.com/project/backgroundPosition-Effect
-	* @author Alexander Farkas
-	* v. 1.21
-	*/
-	(function($) {
-	   if(!document.defaultView || !document.defaultView.getComputedStyle){ // IE6-IE8
-	   //SNIPPED
-	   };
-	})(jQuery);
-	
-	
-	/**
-	* 2.) jQuery Easing Plugin (we're not using jQuery UI as of yet) - http://gsgd.co.uk/sandbox/jquery/easing/
-	*/
-	
-	// t: current time, b: begInnIng value, c: change In value, d: duration
-	jQuery.easing['jswing'] = jQuery.easing['swing'];
-	
-	jQuery.extend( jQuery.easing,
-	{
-	   //SNIPPED
-	   
-	});
-	;(function($) {
-	   $.fn.ajaxSubmit = function(options) {
-	   //SNIPPED
-	   }
-	})(jQuery);
-	
-	/*
-	* jQuery Styled Select Boxes
-	* version: 1.1 (2009/03/24)
-	* @requires jQuery v1.2.6 or later
-	*
-	* Examples and documentation at: http://code.google.com/p/lnet/wiki/jQueryStyledSelectOverview
-	*
-	* Copyright (c) 2008 Lasar Liepins, liepins.org, liepins@gmail.com
-	*
-	* Permission is hereby granted, free of charge, to any person obtaining a copy
-	* of this software and associated documentation files (the "Software"), to deal
-	* in the Software without restriction, including without limitation the rights
-	* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-	* copies of the Software, and to permit persons to whom the Software is
-	* furnished to do so, subject to the following conditions:
-	*
-	* The above copyright notice and this permission notice shall be included in
-	* all copies or substantial portions of the Software.
-	*
-	* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-	* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-	* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-	* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-	* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-	* OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-	* THE SOFTWARE.
-	*
-	*/
-	
-	jQuery.fn.styledSelect = function(settings) {
-	//SNIPPED
-		   return this;
-	};
-	</textarea>
-
-
-	<h4>Script.js</h4>
-
-	<p>Script.js is meant to hold your site or application code. Again, this isn't always the best solution as larger teams and or larger, more feature rich projects can really benefit from breaking out application code into module or feature specific files. For smaller sites, simpler applications, and initial prototyping, however, dropping your work into scripts.js makes sense.</p>
-	
-	<p>A simplified example, using the <a href='http://paulirish.com/2009/markup-based-unobtrusive-comprehensive-dom-ready-execution/'>Markup-based unobtrusive comprehensive DOM-ready execution</a> pattern, might look something like the following:</p>
-
-	<textarea class="brush:js">     
-	/* Name: Demo
-	Author: Demo King */
-	/*demo namespace*/
-	demo = {
-	 common : {
-	   init     : function(){
-		   //initialize
-	   },
-	   finalize : function(){
-		   //finalize
-	   },
-	   config : {
-		   prop : "my value",
-		   constant : "42"
-	   }
-	 },
-	 mapping : {
-	   init     : function(){
-		   //create a map
-	   },
-	   geolocate    : function(){
-		   //geolocation is cool
-	   },
-	   geocode : function(){
-		   //look up an address or landmark
-	   },
-	   drawPolylines : function(){
-		   //draw some lines on a map
-	   },
-	   placeMarker : function(){
-		   //place markers on the map
-	   }
-	 }
-	}
-	</textarea>
-
 	
 	<h2>Variables, ID &amp; Class</h2>
 	
@@ -945,22 +720,6 @@ meta:
 	<h3>Event Delegation</h3>
 	
 	<p>When assigning unobtrusive event listeners, it is typically acceptable to assign the event listener directly to the element(s) which will trigger some resulting action. However, occasionally there may be multiple elements which match the criteria for which you are checking, and attaching event listeners to each one might negatively impact performance. In such cases you should use event delegation instead.</p>
-	
-	<p>jQuery's <a href="http://api.jquery.com/delegate">delegate()</a> is preferred over <a href="http://api.jquery.com/live">live()</a> for performance reasons.</p>
-	
-	
-	<h3>Debugging</h3>
-	
-	<p>Even with the best of validators, inevitably browser quirks will cause issues. There are several invaluable tools which will help to refine code integrity and loading speed. It is important that you have all of these tools available to you, despite the browser you primarily use for development. We recommend developing for Firefox and Safari first, then Google Chrome and Opera, with additional tweaks via conditional comments just for Internet Explorer. The following is a list of helpful debuggers and speed analyzers...</p>
-	
-	<ul>
-		<li><strong>Firefox</strong>: <a href="http://getfirebug.com/">Firebug</a>, <a href="http://code.google.com/speed/page-speed/">Page Speed</a>, <a href="http://developer.yahoo.com/yslow/">YSlow</a></li>
-		<li><strong>Safari</strong>: <a href="http://developer.apple.com/safari/library/documentation/AppleApplications/Conceptual/Safari_Developer_Guide/UsingtheWebInspector/UsingtheWebInspector.html">Web Inspector</a></li>
-		<li><strong>Google Chrome</strong>: <a href="http://google.com/chrome/intl/en/webmasters-faq.html#tools">Developer Tools</a></li>
-		<li><strong>Opera</strong>: <a href="http://opera.com/dragonfly/">Dragonfly</a></li>
-		<li><strong>Internet Explorer 6-7</strong>: <a href="http://microsoft.com/downloads/details.aspx?familyid=E59C3964-672D-4511-BB3E-2D5E1DB91038">Developer Toolbar</a></li>
-		<li><strong>Internet Explorer 8-10</strong>: <a href="http://msdn.microsoft.com/en-us/library/dd565625(v=VS.85).aspx">Developer Tools</a></li>	
-	</ul>
 	
 
 	<h3>Patterns for better JavaScript</h3>
@@ -990,7 +749,6 @@ meta:
 <section id="accessibility">
 
 	<div class="intro has-icon">
-		<img class="icon" src="img/layout/icon-curly.png" alt="{}" />
 		<h1>Accessibility</h1>	
 	</div>
 
@@ -1122,42 +880,12 @@ meta:
 	<pre>ExpiresDefault "access plus 1 year"</pre>
 	
 	<p>Expires http header should be set to a value between one month from present to a year (far future) from present. Caching only applies to that exact URL, so a change in the filename of any asset will start a fresh copy. Many developers use a build process to add a version number or timestamp to their assets. Each subsequent build will start a brand new cached version, allowing you to use far future cache dates without worry. <a href="http://code.google.com/speed/page-speed/docs/caching.html#LeverageBrowserCaching ">Google has a lot more detail on browser caching</a>.</p>
-	
-	
-	<h3>Shard resources across domains</h3>
-	
-	<p>Static content should certainly be served from a domain different than the one that serves HTML. This is optimal so that there are <a href="http://developer.yahoo.com/performance/rules.html#cookie_free">no extra cookies headers on all static content requests</a>. It's also much easier to write caching rules for the entire domain. (Also any subdomains of the current domain will inherit domain cookies, so it's worth using a completely new domain).</p>
-	
-	<p>However with enough assets (especially images) the number of requests grows enough to slow down the load of the page. Many browsers have a low constraint of how many assets they will download simultaneously per domain. (In IE6 and 7, it's only two). In this case, we can serve the assets from multiple subdomains such as:</p>
-	
-	<ul>
-		<li>static1.otherdomain.com</li>
-		<li>static2.otherdomain.com</li>
-		<li>static3.otherdomain.com</li>
-	</ul>
 
-	<p><a href="http://code.google.com/speed/page-speed/docs/rtt.html#ParallelizeDownloads">More information on domain sharding on Google Speed</a></p>
-	
 	
 	<h3>Avoid IFRAMEs</h3><!-- like the plague -->
 	
 	<p>Iframes are the most costly element to add to a given page. They block the page from firing the onload event until they are complete. Sometimes they are useful to let another agency handle tracking scripts. For example the Doubleclick floodlight tag is an iframe, and the admin can add tracking pixels into it from their dashboard. In any case where an iframe is added, it should be appended to the DOM dynamically after window onload has fired. <a href="http://developer.yahoo.com/performance/rules.html#iframes">More detail at Yahoo's Performance site.</a></p>
 	
-	
-	<h3>3rd Party Integration</h3>
-	
-	<h4>Omniture</h4>
-	
-	<p>We recommend to add the Omniture JavaScript code to the DOM using JavaScript after the page has loaded (either a DOM ready event or window's load event). Using this technique, there is no external domain script dependency, which can slow down (and potentially hang) a page load.</p>
-	
-	
-	<h4>Flash</h4>
-	
-	<p>Backup HTML content should be in place of the flash in all cases to maximize SEO value. For XML-driven flash, the backup HTML content should be leveraging the exact same XML file, to ensure data consistency.</p>
-	
-	<p>All replacements should be done using SWFObject but without inline script tags. SWFObject initialization should fire after the DOM Ready event. Minimum player version should be set to minimum v9, to ensure AS3 compatibility.</p>
-	
-
 
 		<h2 id="browserperformance">Cross-Browser Performance Strategy</h2>
 		<p>There are two major truths when it comes to in-browser experience:</p>
@@ -1185,50 +913,11 @@ meta:
 	<p>For load-time based goals, it's important to define the benchmark system. Something like <a href="http://www.webpagetest.org/">PageTest</a> is a good option. Additionally, goals may be defined for multiple pages, for example: the two most popular landing pages (e.g. homepage and support).</p>
 	
 	<p>If the client has more aggressive goals than are reasonable with the intended design, expectations need to be set across the board, priming the team that performance goals are going to be paramount.</p>
-
-
-	<h3>Communicating the performance impact during design phase</h3>
-
-	<strong>Internally</strong>
-
-	<p>During IA, IxD, and visual design, it is the front end engineer's role to communicate the performance impact of interactive features or certain visual techniques on the target browsers. Give the designers constraints: "If we're using Cufon, we cannot have more than 10 elements of custom font per page."</p>
-
-	<strong>Externally</strong>
-
-	<p>Expectations need to be set that <strong>all browsers will not have the same experience</strong>. They won't perform as well as each other, nor may it make sense to have feature parity. It may be sensible to drop a few features from the IE7 experience. Features that could be considered to be dropped are: <em>shadows, transitions, rounded corners, opacity, gradients.</em></p>
-	
-	<strong>When communicating the impact of something:</strong>
-
-	<ul>
-		<li>Clarify the impact with as much detail as possible: "it will hurt page load" vs "it will add 2 seconds to page load in IE"</li>
-		<li>Provide a quick POC (proof of concept) if it's reasonable: "This similar-looking page without siFR loads in 2 seconds, with siFR it loads in 8 and has a delay to show during scrolling"</li>
-	</ul>
 	
 
 	<h3>Develop according to best practices</h3>
 
 	<p>Choose libraries and plugins that are performance optimized. Make wise architecture decisions based on performance goals. Also minimize DOM manipulation when possible, and write styles to <a href="http://paulirish.com/2009/avoiding-the-fouc-v3/">avoid visual changes</a> to the page as it loads and initializes.</p>
-
-
-	<h3>Measure performance during QA</h3>
-
-	<p>QA teams should also prioritize performance related tickets alongside visual, functional, and usability issues. Developers and QA should determine how that priority will be assigned. During QA, the success metrics should be tested regularly.</p>
-
-	<strong>Tools to test with</strong>
-
-	<ul>
-		<li><a href="http://developer.yahoo.com/yslow/">YSlow</a>, <a href="http://code.google.com/speed/page-speed/">Page Speed</a>, <a href="http://stevesouders.com/hammerhead/">Hammerhead</a>, <a href="http://msfast.myspace.com/">MSFast</a>, <a href="http://www.webpagetest.org/">PageTest</a></li>
-	</ul>
-
-	<strong>When performance goals aren't met, there are three options:</strong>
-
-	<ol>
-		<li><em>Redevelop the code</em> - profile, discover bottlenecks, refactor code, optimize to target faster execution in the browser</li>
-		<li><em>Drop the feature</em> - turn it off for slower browsers only</li>
-		<li><em>Redesign approach of the UI</em> - perhaps the design could use a tweak which would bypass the issue entirely</li>
-	</ol>
-
-	<p>With this approach, we think all parties have a better chance of having aligned expectations heading in as well as a more sensible workflow in dealing with performance challenges.</p>
 
 
 </section>
@@ -1237,121 +926,14 @@ meta:
 <section id="browserTesting">
 
 	<div class="intro has-icon">
-		<img class="icon" src="img/layout/icon-curly.png" alt="{}" />
 		
 		<h1>Browser Testing and Support</h1>
 		
 		<p>Today's audience can choose from quite a large pool of web browsers, each providing a slightly (or dramatically) different experience. As developers, it is our responsibility to choose just how the web pages we build are displayed to those users. This section describes how we, at Roundarch Isobar, make some of these key decisions.</p>
 	</div>
 	
-
 	<h3>What we support</h3>
 
-	<figure>
-		<img src="img/browsers1.jpg" alt="Browsers" />
-	</figure>
-	
-	<p><strong>Roundarch Isobar supports any browser with an A-Grade in <a href="http://developer.yahoo.com/yui/articles/gbs/">Yahoo's Graded Browser Support</a>, with the exception of Opera. There may be exceptions to this, given regional markets and their particular metrics</strong>.</p>
-
-	<p>We will strive to support any other mission critical browsers mandated by the client (IE 5.5, Opera, Konqueror, Safari 3 on PC, etc), though we cannot guarantee all functionality is possible.</p>
-	
-	
-	<h3>How we test</h3>
-	
-	<p>Comprehensive browser testing is a must on every Roundarch Isobar web project. Considerable effort must be made to test across browsers and platforms to ensure a quality and consistent user experience. Setting up a testing environment can be a challenge but can be well worth it.</p>
-
-	<h4>On Microsoft Windows</h4>
-	
-	<h5 id="vhds">IE Testing</h5>
-	
-	<p>Since it's impossible to have more than a single copy of Microsoft Internet Explorer installed on a PC, testing for IE is a challenge. Fortunately, Microsoft has finally made available development versions of older Internet Explorer's available for downloading. These Virtual Hard Drives (VHD's) run stripped down versions of Microsoft Windows that expire (time out) over time. Setting them up again after a few months is typically required. Development copies of Microsoft Windows from your MSDN license (if available) may also be an option depending on what you have access to.</p>
-
-	<ul>
-		<li><a href="http://www.microsoft.com/windows/virtual-pc/default.aspx">Virtual PC</a> - Virtual PC must be installed on your computer, and if you are on Windows 7, you must use "XP Mode".</li>
-		<li><a href="http://www.microsoft.com/downloads/en/details.aspx?FamilyID=21eabb90-958f-4b64-b5f1-73d0a413c8ef&displaylang=en">Microsoft Windows VPC Images</a> - Several varieties are available of the virtual hard drive images. You may need to install several to have a comprehensive test suite, depending on your project.</li>
-	</ul>
-
-	<p>Additionally, other less effective IE Testing options (not typically recommended) include <a href="http://www.my-debugbar.com/wiki/IETester/HomePage">IETester</a>, which is still better than <a href="http://tredosoft.com/Multiple_IE">Multiple_IE</a> and <a href="http://tredosoft.com/IE7_standalone">IE7 standalone</a>.</p>
-	
-	<h5>Firefox</h5>
-	
-	<ul>
-		<li><a href="http://www.mozilla.com/en-US/firefox/all-older.html">Firefox 3.6+</a> should be installed natively as well - with version 3.0 available through a <a href="http://portableapps.com/">portable apps</a> version. </li>
-		<li>If you're up to it, <a href="https://wiki.molecular.com/wiki/Install_Firefox_3">Install Firefox 3, 3.5, and/or 3.6 side-by-side with FF4</a>. The Firefox Profile Manager allows you to install to different directories and <a href="http://lifehacker.com/5481213/master-multiple-firefox-profiles-for-more-productive-browsing">maintain different profiles for each</a>.</li>
-	</ul>
-
-	<h5>Safari for the PC</h5>
-
-	<ul>
-		<li>Use <a href="http://www.apple.com/safari/">the newest release of Safari for the PC</a>. It is 98% consistent with Safari on OS X, but not completely, so test there if its a required platform.</li>
-	</ul>
-
-	<h5>Opera</h5>
-
-	<ul>
-		<li>You can download <a href="http://arc.opera.com/pub/opera/win/">old versions from their archive</a>. Install in different folders to run multiple versions</li>
-	</ul>
-
-	<h5>Google Chrome and Chrome Versions</h5>
-	
-	<p>Google Chrome updates itself and as luck would have it, most all users have the most recent version more often than not. If only every browser were this easy. No worries about old browsers based on Google Chrome.</p>
-
-	<h4>On Mac OS X</h4>
-
-	<p>For the core Mac OS X browsers, Mozilla Firefox, Google Chrome and Apple Safari offer virtually identical browser experiences to their Windows counterparts. That said, some OS level differences can be present and web sites should be tested on both platforms. Typical differences are around font rendering and thus spacing issues sometimes arise.</p>
-	
-	<h5>Testing for Windows on a Mac</h5>
-	
-	<p>There are a number of options for testing Windows-based browsers on the Mac OS. First, Mac computers offer a "<a href="http://en.wikipedia.org/wiki/Boot_Camp_(software)">boot camp</a>" partition which allow you to boot the Mac into a Microsoft Windows partition. This is a complex yet thorough testing environment. Once you've booted to Windows, the normal <a href="#vhds">Windows options exist</a>.</p>
-	
-	<p>Other options include virtualization of Windows inside Mac OS X, which allows you to literally run Windows inside of the Mac OS.</p>
-	
-	<p><a href="#vhds">The Microsoft VHD's</a> can be opened or converted on most of these options, therefore enabling the same degree of testing prowess that Windows users have available to them. Though since you can also test on the Mac simultaneously, some might argue you have more flexibility...</p>
-	
-	<ul>
-		<li><a href="http://www.parallels.com/products/desktop/">Parallels</a> - Parallels is available and may already be installed by the Roundarch Isobar IT department on your Mac.</li>
-		<li><a href="http://www.vmware.com/products/fusion/overview.html">VMWare Fusion</a> - VMWare Fusion offers the same level of Windows virtualization through their Fusion product.</li>
-	</ul>
-
-	<h5>Mozilla Firefox</h5>
-
-	<p>Just like on Windows, you can install and run multiple copies of Mozilla Firefox on a Mac, though it is a bit trickier to set up multiple profiles via the Profile Manager. That said, there are some tricks you can use with <a href="http://sonnygill.net/mac/mac-multiple-firefox-profiles/">Automator to make separate profiles and run them nicely</a>.</p>
-
-	<h3>Bugs in standalone IE versions</h3>
-
-	<p>Note: The IE6 standalone has a buggy implementation of opacity in some cases. This will result in any opacity applied with a CSS filter, like alpha opacity or a 24-bit PNG, to fail. In the case that opacity must be tested, you will need a native IE6 installation.</p>
-
-	<p>It has been noticed that IE 7 using the Vista platform does have differences from IE 7 on Windows XP, therefore, you might want to make sure that someone on your team has this configuration as well. <a href="http://www.my-debugbar.com/wiki/IETester/HomePage">IETester</a> is known to fix a number of these issues, as do the Xenocode browsers.</p>
-
-	<h2>Browser Resolution</h2>
-		<p>Along with catering to browsers, developers must stay conscious of the screen resolutions of their audience. As monitor screens get larger, the breadth of resolutions grows as well. Below are some guidelines to help you in working with resolutions.</p>
-	
-	<p><strong>1024px resolution</strong></p>
-	
-	<ul>
-		<li>Fold estimated at 570px.</li>
-		<li>Optimal width: 960px - Has comfortable padding on both sides, is divisible by many numbers, and also plays well with <a href="http://www.iab.net/iab_products_and_industry_services/1421/1443/1452">IAB ad standard widths</a></li>
-		<li>Larger width: 970px - Still has some padding on both sides in most browsers. The math plays well with the <a href="http://en.wikipedia.org/wiki/Golden_ratio">Golden Ratio</a></li>
-		<li>Maximum width: 996px - Without incurring any horizontal scrollbars in the major browsers. <a href="http://www.nealgrosskopf.com/tech/thread.php?pid=43">Based on the research here</a> the maximum is 1003 px wide if you don't want a horizontal scrollbar.</li>
-	</ul>
-	
-	
-	<p><strong>Current stats on window sizes</strong></p>
-	
-	<ul>
-		<li><a href="http://www.cameronmoll.com/archives/001220.html">Authentic Boredom - Optimal width for 1024px resolution?</a></li>
-		<li><a href="http://marketshare.hitslink.com/report.aspx?qprid=17&qpmr=100&qpdt=1&qpct=3&qptimeframe=M">Market share for browsers, operating systems and search engines</a></li><li><a href="http://www.w3counter.com/globalstats.php">Global Web Stats</a></li>
-	</ul>
-	
-	
-	<p><strong>System resolution is not, however, the same as browser size</strong></p>
-	
-	<ul>
-		<li><a href="http://mentalized.net/journal/2006/10/24/browser_size_does_matter_actual_numbers/">Browser size does matter - Actual numbers | mentalized</a></li>
-		<li><a href="http://www.baekdal.com/reports/actual-browser-sizes/abs-sizes/">What size do i need to support | baekdal</a></li>
-		<li><a href="http://www.456bereastreet.com/archive/200704/poll_results_504_of_respondents_maximise_windows/">Poll results: 50.4% of respondents maximise windows</a></li>
-		<li><a href="http://www.useit.com/alertbox/screen_resolution.html">Screen Resolution and Page Layout</a></li>
-	</ul>
 	
 </section>
 <!-- ### SEO SECTION ### -->

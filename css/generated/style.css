@@ -664,12 +664,6 @@ header {
   margin: 0 20px 20px 0;
 }
 
-/* line 22, ../../scss/global/_intro.scss */
-div.intro h1, div.intro h2,
-div.intro p, div.intro ol {
-  margin-left: 120px;
-}
-
 /* line 24, ../../scss/global/_intro.scss */
 div.intro ol, div.intro ul {
   list-style-position: inside;
