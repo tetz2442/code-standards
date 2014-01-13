@@ -40,7 +40,7 @@ var ISOBAR = {
 		},
 		// just hooking up back to top
 		stuff : function(){
-			$('a.backAnchor').live('click',function(){
+			$('body').on('click', 'a.backAnchor', function(){
 				window.scrollTo(0, 0);
 				return false;
 			});

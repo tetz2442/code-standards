@@ -273,27 +273,6 @@ meta:
 
 	<p>IDs have a higher specificity than attribute selectors do, and class selectors have higher specificity than any number of element selectors. Always try to use IDs to increase the specificity. There are times when we may try to apply a CSS rule to an element and it does not work no matter what we try. This is likely because the specificity of the selector used is lower than another one and the properties of the higher one are taking precedence over those you want to apply. This is more common in working with larger more complex stylesheets. It isn't a big issue with smaller projects usually.</p>
 
-	<h5>Calculating specificity</h5>
-
-	<p>When working with a large and complex stylesheet it helps to know how to calculate the value of a selector's specificity, to save you time and to make your selectors more efficient.</p>
-
-	<p>Specificity is calculated by counting various components of your CSS and expressing them in a form (a,b,c,d).</p>
-
-	<ul>
-		<li>Element, Pseudo Element: d = 1 – (0,0,0,1)</li>
-		<li>Class, Pseudo class, Attribute: c = 1 – (0,0,1,0)</li>
-		<li>Id: b = 1 – (0,1,0,0)</li>
-		<li>Inline Style: a = 1 – (1,0,0,0)</li>
-	</ul>
-
-	<p>However, it may be better to use a specificity calculator.</p>
-
-	<ul>
-		<li><a href="http://specificity.keegan.st/">Specificity Calculator</a></li>
-		<li><a href="http://www.smashingmagazine.com/2007/07/27/css-specificity-things-you-should-know/">Some things you should know about specificity</a></li>
-		<li><a href="http://www.brunildo.org/test/IEASpec.html#a">IE Specificity bugs</a></li>
-	</ul>
-
 	<p>Using <code>!important</code> overrides all specificity no matter how high it is. We like to avoid using it for this reason. Most of the time it is not necessary. Even if you need to override a selector in a stylesheet you don't have access to, there are usually ways to override it without using !important. Avoid using it if possible.</p>
 
 
@@ -373,18 +352,6 @@ meta:
 			</ul>
 		</li>
 	</ul>
-<h3>Color Management</h3>
-    <ul>
-        <li>Verify that all members on your team have consistent color management settings.</li>
-           <ul>
-               <li>Any given two monitors most likely display the colors differently, but sRGB color profile must be your default.</li>
-               <li>When you open files in Photoshop, pay attention to Color Profile warnings and notify team members when Photoshop is suggesting to convert an image to a different profile.</li>
-			</ul>
-        <li>Never embed a color profile in your images.
-            <ul>
-				<li>When you Save for Web and Devices from Photoshop, be sure to uncheck &quot;Embed Color Profile.&quot;</li>
-			</ul> </li>
-    </ul>
 
 	<hr />
 
@@ -768,8 +735,7 @@ meta:
 
 <section id="performance">
 
-	<div class="intro has-icon">
-		<img class="icon" src="img/layout/icon-curly.png" alt="{}" />
+	<div class="intro">
 		<h1>Performance</h1>
 		<p>As we continue to push the limits of what the web can do, it remains just as important a web page can be used with minimal effort or wait time. The following section explains how web pages can be optimized to keep all audiences happy.</p>
 	</div>
@@ -928,11 +894,17 @@ meta:
 		
 		<h1>Browser Testing and Support</h1>
 		
-		<p>Today's audience can choose from quite a large pool of web browsers, each providing a slightly (or dramatically) different experience. As developers, it is our responsibility to choose just how the web pages we build are displayed to those users. This section describes how we, at Roundarch Isobar, make some of these key decisions.</p>
+		<p>Today's audience can choose from quite a large pool of web browsers, each providing a slightly (or dramatically) different experience. As developers, it is our responsibility to choose just how the web pages we build are displayed to those users.</p>
 	</div>
 	
 	<h3>What we support</h3>
 
+    <ul>
+        <li>Chrome</li>
+        <li>Safari</li>
+        <li>IE8+</li>
+        <li>Firefox</li>
+    </ul>
 	
 </section>
 <!-- ### SEO SECTION ### -->
@@ -987,30 +959,5 @@ meta:
 	<p><strong>vs</strong></p>
 	<pre>http:// domain.com/ecomm.cfm?view=prod&prodId=23425</pre>
 	
-	
-	<h4>Flash and Image Replacement</h4>
-
-	<p>Always use backup HTML content for flash. All promo images should use CSS-based image replacement instead of alt tags.</p>
-
-	<figure class="preCode">>Fallback non-flash version:</figure>
-	<textarea class="brush:html">
-		<a href="/nike/morethanagame/" id="morethan">
-		  <h4>Nike: More Than A Game</h4>
-		  <h5>Experience the movement and view apparel</h5>
-		</a>
-	</textarea>
-	
-	<br />
-	<textarea class="brush:css">
-		a#more than { background:url(/promos/nikegame.jpg) no-repeat; width: 200px; height: 100px;
-					 text-indent: -999px; overflow:hidden; display:block; }
-	</textarea>
-	
-	<h3>Google's SEO Report Card</h3>
-
-	<p><a href="http://googlewebmastercentral.blogspot.com/2010/03/googles-seo-report-card.html">Google's SEO Report Card</a> is an effort to provide Google's product teams with ideas. on how they can improve their products' pages using simple and accepted optimizations. These optimizations are intended to not only help search engines understand the content of their pages better, but also to improve their our users' experience.</p>
-
-	<p>when visiting their sites. Simple steps such as fixing 404s and broken links, simplifying URL choice, and providing easier-to-understand titles and snippets for their pages can benefit both users and search engines.</p>
-
 
 </section>
